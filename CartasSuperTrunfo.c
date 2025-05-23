@@ -8,6 +8,8 @@ int main (){
  float area;      // digite a árem em (km²)
  float PIB;       // digite o produto interno bruto da cidade que você escolheu 
  int   pontos;   // pontos turisticos da cidade 
+ float densidade; // densidade populacional
+ float PIBpc;     //PIB per capita
 
 
     printf("Digite o estado da sua carta (A-H): \n");
@@ -33,7 +35,10 @@ int main (){
 
     printf("Digite o número de pontos turísticos da cidade da sua carta: \n");
     scanf("%d", &pontos);
-    
+
+    densidade = populacao / area;
+    PIBpc = (PIB * 1000000000)/ populacao; // multiplicar antes pra ajustar os valores
+
     printf("Carta 1\n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", codigo);
@@ -42,6 +47,8 @@ int main (){
     printf("Área: %.2f km²\n", area);
     printf("PIB: %.2f bilhões de reais\n", PIB);
     printf("Numero de Pontos Turísticos: %d\n", pontos);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade);
+    printf("PIBpc: %.2f reais\n", PIBpc);
     
  return 0;
 }
